@@ -1,6 +1,89 @@
-$primary-color: #444;
+$primaryColor: #444;
+$textColorPrimary: #f3f3f3;
+$secondaryColor: #eece1a;
+
+@mixin easeOut {
+  transition: all .5s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: $primary-color;
-  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: $primaryColor;
+  color: $textColorPrimary;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: $textColorPrimary;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(
+      lighten($primaryColor, 6),
+      0.5
+    ); /* SASS: lighten the color & rgba for transparency*/
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondaryColor;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondaryColor;
+        @include easeOut();
+      }
+    }
+  }
+
+  &:hover {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
