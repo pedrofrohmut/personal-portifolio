@@ -17,6 +17,23 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body#bg-image {
+  background: url(../img/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body#bg-image:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.5);
+  z-index: -1;
+}
+
 p {
   text-align: justify;
 }
@@ -44,7 +61,7 @@ h2.sm-heading,
 h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background: rgba(83, 83, 83, 0.5);
+  background: rgba(71, 71, 71, 0.5);
   /* SASS: lighten the color & rgba for transparency*/
 }
 
@@ -77,10 +94,10 @@ main .icons a:hover {
   transition: all .5s ease-out;
 }
 
-main:hover {
+main#home {
   overflow: hidden;
 }
 
-main:hover h1 {
+main#home h1 {
   margin-top: 20vh;
 }
