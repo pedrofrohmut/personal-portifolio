@@ -2,11 +2,11 @@ $primaryColor: #444;
 $textColorPrimary: #f3f3f3;
 $secondaryColor: #eece1a;
 $showHomeImage: true;
-$homeImage: url(../img/background.jpg);
+$homeImage: url(../img/background_resized.jpg);
 $backgroundOpacity: 0.5;
 
 @mixin easeOut {
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 @mixin background {
@@ -29,4 +29,3 @@ $backgroundOpacity: 0.5;
     }
   }
 }
-
