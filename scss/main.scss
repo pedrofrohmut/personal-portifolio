@@ -119,6 +119,67 @@ main {
   }
 }
 
+// Work / Projects
+.projects {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px solid #f3f3f3;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondaryColor;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact Page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 1.3rem;
+    border: 1.4px solid #f3f3f3;
+    padding: 1rem 1.6rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+    cursor: pointer;
+  }
+}
+
+// Button Style
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondaryColor;
+    color: setTextColor($primaryColor);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background-color: darken($primaryColor, 50);
+  color: #f3f3f3;
+}
+
+.btn-light {
+  @extend .btn;
+  background-color: lighten($primaryColor, 50);
+  color: #333;
+}
+
 footer#main-footer {
   text-align:center;
   padding: 1rem;
@@ -127,4 +188,4 @@ footer#main-footer {
   height: 60px;
 }
 
-@import "mobile";
+@import "responsive";
