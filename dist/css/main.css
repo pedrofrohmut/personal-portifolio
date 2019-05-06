@@ -337,6 +337,31 @@ main#home h1 {
   transition: all 0.5s ease-out;
 }
 
+.boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.boxes div {
+  font-size: 1.3rem;
+  border: 1.4px solid #f3f3f3;
+  padding: 1rem 1.6rem;
+  margin-bottom: 3rem;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
