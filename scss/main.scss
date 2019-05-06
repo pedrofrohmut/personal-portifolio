@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   background-color: $primaryColor;
-  color: $textColorPrimary;
+  color: setTextColor($primaryColor);
   font-size: 15px;
   font-weight: 400;
   line-height: 2;
@@ -42,10 +42,11 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
+    /* SASS: lighten the color & rgba for transparency*/
     background: rgba(
       lighten($primaryColor, 1),
       0.5
-    ); /* SASS: lighten the color & rgba for transparency*/
+    ); 
   }
 }
 
@@ -61,13 +62,15 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  // Sticky footer
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
 
     a {
       padding: 0.4rem;
+      color: setTextColor($primaryColor);
 
       &:hover {
         color: $secondaryColor;
@@ -82,6 +85,46 @@ main {
       margin-top: 20vh;
     }
   }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+
+  .bio-image { 
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondaryColor;
+  }
+
+  .bio { 
+    grid-area: bio; 
+    font-size: 1.5rem;
+  }
+
+  .job-1 { grid-area: job1; }
+  .job-2 { grid-area: job2; }
+  .job-3 { grid-area: job3; }
+
+  .job {
+    background-color: lighten($primaryColor, 5);
+    padding: 0.5rem;
+    border-bottom: $secondaryColor 5px solid;
+  }
+}
+
+footer#main-footer {
+  text-align:center;
+  padding: 1rem;
+  background: darken($primaryColor, 10);
+  color: setTextColor($primaryColor);
+  height: 60px;
 }
 
 @import "mobile";
